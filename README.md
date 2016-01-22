@@ -30,7 +30,7 @@ composer update
 
 Add this line to **Your_project\config\bootstrap.php**
 ```
-Plugin::load('Crabstudio/BaoKim', ['bootstrap' => true]);
+Plugin::load('BaoKim', ['bootstrap' => true]);
 ```
 
 ## Configure
@@ -51,7 +51,7 @@ Cake\Core\Configure::write($baokim);
 Apply in your controller
 ```
 public function checkout() {
-	$this->loadComponent('Crabstudio/BaoKim');
+	$this->loadComponent('BaoKim');
 	
 	//your checkout logic here
 	//$url_success route to checkoutSuccessfull function

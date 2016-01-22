@@ -1,8 +1,8 @@
 <?php
 
 use Cake\Core\Configure;
-use Crabstudio\BaoKim\Exception\MissingMerchantException;
-use Crabstudio\BaoKim\Exception\MissingSecurePassException;
+use BaoKim\Exception\MissingMerchantException;
+use BaoKim\Exception\MissingSecurePassException;
 
 if(!Configure::read('BaoKim.merchant_id')) {
 	throw new MissingMerchantException();
