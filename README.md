@@ -1,8 +1,5 @@
+[![Latest Stable Version](https://poser.pugx.org/crabstudio/baokim/version)](https://packagist.org/packages/crabstudio/baokim) [![Latest Unstable Version](https://poser.pugx.org/crabstudio/baokim/v/unstable)](//packagist.org/packages/crabstudio/baokim) [![Total Downloads](https://poser.pugx.org/crabstudio/baokim/downloads)](https://packagist.org/packages/crabstudio/baokim)
 # CakePHP 3.x: BaoKim payment gateway plugin
-
-## Introduction
-
-BaoKim payment gateway plugin for CakePHP 3.x
 
 ## Installation
 
