@@ -19,14 +19,12 @@
         "crabstudio/search": "Easy search solution for CakePHP 3.x. Datetime data type already supported",
         "cakephp/cakephp-codesniffer": "Allows to check the code against the coding standards used in CakePHP."
     },
-    "author": [
-        {
-            "name": "anhtuank7c",
-            "email": "anhtuank7c@hotmail.com",
-            "role": "Author",
-            "homepage": "http://crabstudio.info/"
-        }
-    ],
+    "time": "2016-01-24",
+    "authors": [{
+        "name": "anhtuank7c",
+        "email": "anhtuank7c@hotmail.com",
+        "homepage": "http://crabstudio.info"
+    }],
     "require": {
         "php": ">=5.4.16",
         "cakephp/cakephp": "~3.0"
@@ -36,12 +34,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Crabstudio\\baokim\\": "src"
+            "Crabstudio\\BaoKim\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Crabstudio\\baokim\\Test\\": "tests",
+            "Crabstudio\\BaoKim\\Test\\": "tests",
             "Cake\\Test\\": "./vendor/cakephp/cakephp/tests"
         }
     },
