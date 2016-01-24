@@ -27,9 +27,12 @@ composer update
 
 Add this line to **Your_project\config\bootstrap.php**
 ```
-Plugin::load('BaoKim', ['bootstrap' => true]);
+Plugin::load('Crabstudio/BaoKim', ['bootstrap' => true]);
 ```
-
+Or from command line:
+```
+bin/cake plugin load crabstudio/baokim
+```
 ## Configure
 
 Write to your configure:
