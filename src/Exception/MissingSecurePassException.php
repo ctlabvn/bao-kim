@@ -1,6 +1,6 @@
 <?php
 
-namespace BaoKim\Exception;
+namespace Crabstudio\BaoKim\Exception;
 
 use Exception;
 

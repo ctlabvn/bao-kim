@@ -1,8 +1,8 @@
 {
-    "name": "crabstudio/baokim",
+    "name": "crabstudio/bao-kim",
     "description": "BaoKim payment gateway plugin for CakePHP 3.x",
     "type": "cakephp-plugin",
-    "homepage": "https://github.com/crabstudio/baokim",
+    "homepage": "https://github.com/crabstudio/bao-kim",
     "license": "MIT",
     "keywords": [
         "cakephp3",
@@ -36,18 +36,18 @@
     },
     "autoload": {
         "psr-4": {
-            "BaoKim\\": "src"
+            "Crabstudio\\BaoKim\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "BaoKim\\Test\\": "tests",
+            "Crabstudio\\BaoKim\\Test\\": "tests",
             "Cake\\Test\\": "./vendor/cakephp/cakephp/tests"
         }
     },
     "support": {
-        "source": "https://github.com/crabstudio/baokim",
-        "issues": "https://github.com/crabstudio/baokim/issues"
+        "source": "https://github.com/crabstudio/bao-kim",
+        "issues": "https://github.com/crabstudio/bao-kim/issues"
     },
     "minimum-stability": "stable",
     "prefer-stable": true

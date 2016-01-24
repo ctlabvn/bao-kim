@@ -1,5 +1,5 @@
 <?php
-namespace BaoKim\Controller\Component;
+namespace Crabstudio\BaoKim\Controller\Component;
 
 use Cake\Core\Configure;
 use Cake\Controller\Component;
