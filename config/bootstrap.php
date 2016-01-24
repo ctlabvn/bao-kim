@@ -10,3 +10,6 @@ if(!Configure::read('BaoKim.merchant_id')) {
 if(!Configure::read('BaoKim.secure_pass')) {
 	throw new MissingSecurePassException();
 }
+if(!Configure::read('BaoKim.business')) {
+	throw new MissingSecurePassException();
+}

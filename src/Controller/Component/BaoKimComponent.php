@@ -12,11 +12,11 @@ class BaoKimComponent extends Component {
     protected $_defaultConfig = [
         'merchant_id' => null,
         'secure_pass' => null,
+        'business' => null
     ];
 
-    public function initialize() {
-        parent::initialize();
-
+     public function initialize(array $config) {
+        parent::initialize($config);
         $this->_defaultConfig = array_merge($this->_defaultConfig, Configure::read('BaoKim'));
     }
 
@@ -33,13 +33,13 @@ class BaoKimComponent extends Component {
      * @param $url_detail           Url chi tiết đơn hàng
      * @return string url
      */
-    public function createRequestUrl($order_id, $business, $total_amount, $shipping_fee, $tax_fee, $order_description, $url_success, $url_cancel, $url_detail) {
+    public function createRequestUrl($order_id, $total_amount, $shipping_fee, $tax_fee, $order_description, $url_success, $url_cancel, $url_detail) {
 
         // Mảng các tham số chuyển tới baokim.vn
         $params = array(
             'merchant_id'       =>  strval($this->_defaultConfig['merchant_id']),
             'order_id'          =>  strval($order_id),
-            'business'          =>  strval($business),
+            'business'          =>  strval($this->_defaultConfig['business']),
             'total_amount'      =>  strval($total_amount),
             'shipping_fee'      =>  strval($shipping_fee),
             'tax_fee'           =>  strval($tax_fee),

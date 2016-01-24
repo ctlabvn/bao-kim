@@ -41,6 +41,7 @@ $baokim = [
     'BaoKim' => [
         'merchant_id' => 'your_merchant_id',
         'secure_pass' => 'your_secret',
+        'business' => 'your_business_email@example.com'
     ]
 ];
 Cake\Core\Configure::write($baokim);
@@ -51,19 +52,19 @@ Cake\Core\Configure::write($baokim);
 Apply in your controller
 ```
 public function checkout() {
-	$this->loadComponent('Crabstudio/BaoKim');
+	$this->loadComponent('Crabstudio/BaoKim.BaoKim');
 	
 	//your checkout logic here
 	//$url_success route to checkoutSuccessfull function
 	//$url_cancel route to checkoutCancel function
 
-	$redirect_url = $this->BaoKim->createRequestUrl($order_id, $business, $total_amount, $shipping_fee, $tax_fee, $order_description, $url_success, $url_cancel, $url_detail);
+	$redirect_url = $this->BaoKim->createRequestUrl($order_id, $total_amount, $shipping_fee, $tax_fee, $order_description, $url_success, $url_cancel, $url_detail);
 	return $this->redirect($redirect_url);
 }
 
 public function checkoutSuccessfull() {
 	$this->request->allowMethod('get');
-	$this->loadComponent('Crabstudio/BaoKim');
+	$this->loadComponent('Crabstudio/BaoKim.BaoKim');
 	$isValid = $this->BaoKim->verifyResponseUrl($this->request);
 	if($isValid) {
 		//Valid logic here
