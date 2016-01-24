@@ -51,7 +51,7 @@ Cake\Core\Configure::write($baokim);
 Apply in your controller
 ```
 public function checkout() {
-	$this->loadComponent('BaoKim');
+	$this->loadComponent('Crabstudio/BaoKim');
 	
 	//your checkout logic here
 	//$url_success route to checkoutSuccessfull function
