@@ -36,12 +36,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Crabstudio\\BaoKim\\": "src"
+            "Crabstudio\\baokim\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Crabstudio\\BaoKim\\Test\\": "tests",
+            "Crabstudio\\baokim\\Test\\": "tests",
             "Cake\\Test\\": "./vendor/cakephp/cakephp/tests"
         }
     },
