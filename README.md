@@ -1,6 +1,8 @@
 [![Build Status](https://travis-ci.org/crabstudio/bao-kim.svg?branch=master)](https://travis-ci.org/crabstudio/bao-kim) [![Latest Stable Version](https://poser.pugx.org/crabstudio/baokim/version)](https://packagist.org/packages/crabstudio/baokim) [![Latest Unstable Version](https://poser.pugx.org/crabstudio/baokim/v/unstable)](//packagist.org/packages/crabstudio/baokim) [![Total Downloads](https://poser.pugx.org/crabstudio/baokim/downloads)](https://packagist.org/packages/crabstudio/baokim)
 # CakePHP 3.x: BaoKim payment gateway plugin
 
+[Donate] Buy me a cup of coffee [![paypal](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=25FMH28VCF8V2&lc=VN&item_name=FlatAdmin%20plugin%20CakePHP%203&item_number=flat_admin&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted)
+
 ## Installation
 
 You can install this plugin into your CakePHP application using [composer](http://getcomposer.org).
