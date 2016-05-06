@@ -5,8 +5,8 @@ use Cake\Core\Configure;
 use Cake\Controller\Component;
 use Cake\Network\Request;
 
-class BaoKimComponent extends Component {
-
+class BaoKimComponent extends Component
+{
     static public $baokim_url = 'https://www.baokim.vn/payment/customize_payment/order';
 
     protected $_defaultConfig = [
@@ -15,7 +15,8 @@ class BaoKimComponent extends Component {
         'business' => null
     ];
 
-     public function initialize(array $config) {
+    public function initialize(array $config)
+    {
         parent::initialize($config);
         $this->_defaultConfig = array_merge($this->_defaultConfig, Configure::read('BaoKim'));
     }
@@ -33,43 +34,42 @@ class BaoKimComponent extends Component {
      * @param $url_detail           Url chi tiết đơn hàng
      * @return string url
      */
-    public function createRequestUrl($order_id, $total_amount, $shipping_fee, $tax_fee, $order_description, $url_success, $url_cancel, $url_detail) {
-
+    public function createRequestUrl($order_id, $total_amount, $shipping_fee, $tax_fee, $order_description, $url_success, $url_cancel, $url_detail)
+    {
         // Mảng các tham số chuyển tới baokim.vn
-        $params = array(
-            'merchant_id'       =>  strval($this->_defaultConfig['merchant_id']),
-            'order_id'          =>  strval($order_id),
-            'business'          =>  strval($this->_defaultConfig['business']),
-            'total_amount'      =>  strval($total_amount),
-            'shipping_fee'      =>  strval($shipping_fee),
-            'tax_fee'           =>  strval($tax_fee),
-            'order_description' =>  strval($order_description),
-            'url_success'       =>  strtolower($url_success),
-            'url_cancel'        =>  strtolower($url_cancel),
-            'url_detail'        =>  strtolower($url_detail)
-        );
+        $params = [
+            'merchant_id' => strval($this->_defaultConfig['merchant_id']),
+            'order_id' => strval($order_id),
+            'business' => strval($this->_defaultConfig['business']),
+            'total_amount' => strval($total_amount),
+            'shipping_fee' => strval($shipping_fee),
+            'tax_fee' => strval($tax_fee),
+            'order_description' => strval($order_description),
+            'url_success' => strtolower($url_success),
+            'url_cancel' => strtolower($url_cancel),
+            'url_detail' => strtolower($url_detail)
+        ];
         ksort($params);
-
         $params['checksum'] = $this->__hash($params);
-
-        //Kiểm tra  biến $redirect_url xem có '?' không, nếu không có thì bổ sung vào
-        $redirect_url = self::$baokim_url;
-        if (strpos($redirect_url, '?') === false) {
-            $redirect_url .= '?';
-        } else if (substr($redirect_url, strlen($redirect_url)-1, 1) != '?' && strpos($redirect_url, '&') === false) {
-            // Nếu biến $redirect_url có '?' nhưng không kết thúc bằng '?' và có chứa dấu '&' thì bổ sung vào cuối
-            $redirect_url .= '&';
+        //Kiểm tra  biến $redirectUrl xem có '?' không, nếu không có thì bổ sung vào
+        $redirectUrl = self::$baokim_url;
+        if (strpos($redirectUrl, '?') === false) {
+            $redirectUrl .= '?';
+        } elseif (substr($redirectUrl, strlen($redirectUrl)-1, 1) != '?' && strpos($redirectUrl, '&') === false) {
+            // Nếu biến $redirectUrl có '?' nhưng không kết thúc bằng '?' và có chứa dấu '&' thì bổ sung vào cuối
+            $redirectUrl .= '&';
         }
 
         // Tạo đoạn url chứa tham số
-        $url_params = '';
+        $urlParams = '';
         foreach ($params as $key => $value) {
-            if ($url_params == '')
-                $url_params .= $key . '=' . urlencode($value);
-            else
-                $url_params .= '&' . $key . '=' . urlencode($value);
+            if ($urlParams == '') {
+                $urlParams .= $key . '=' . urlencode($value);
+            } else {
+                $urlParams .= '&' . $key . '=' . urlencode($value);
+            }
         }
-        return $redirect_url . $url_params;
+        return $redirectUrl . $urlParams;
     }
     
     /**
@@ -77,9 +77,10 @@ class BaoKimComponent extends Component {
      * @param Request chứa tham số trả về trên url
      * @return boolean
      */
-    public function verifyResponseUrl(Request $request = null) {
+    public function verifyResponseUrl(Request $request = null)
+    {
         // If request null or checksum doesn't exist
-        if(!$request || !isset($request->query['checksum'])) {
+        if (!$request || !isset($request->query['checksum'])) {
             return false;
         }
         $checksum = $request->query['checksum'];
@@ -91,11 +92,12 @@ class BaoKimComponent extends Component {
     }
 
     /**
-     * 
+     * hash function
      * @param array $params
      * @return string
      */
-    private function __hash(array $params = []) {
+    private function __hash(array $params = [])
+    {
         return strtoupper(md5($this->_defaultConfig['secure_pass'] . implode('', $params)));
     }
 }
